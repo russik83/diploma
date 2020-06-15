@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{ door.name }}</h3>
+<div class="row">
+    <div class="col-8">
+        <div class="card" style="width: 50%;">
+            <img class="card-img-top" src="{{ door.img_src }}" alt="Card image cap" style="width: 100%; height: auto;">
+        </div>
+        <div>
+            {{ door.text }}
+            <h6>Цвет: {{ door.colour }}</h6>
+            <h6>Материал: {{ door.material }}</h6>
+            <h6>Размеры: {{ door.dimensions }}</h6>
+            <h6>Толщина: {{ door.thickness }}</h6>
+            <h6> {{ door.hardware }}</h6>
+            <br><em><div class="alert alert-success">Цена: {{ door.price }} руб.</em>
+        </div>
+    </div>
+    <div class="-4">
+        <img src="http://zavod-akma.ru/assets/images/resources/zamok.png">
+        <em>---Фурнитура</em>
+    </div>
+</div>
+{% endblock %}
