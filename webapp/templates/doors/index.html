@@ -38,29 +38,27 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+</div>
+
+<br><h2>Большой ассортимент. На заказ. Продажа. становка. Выезд замерщика</h2><br>
+{% for category in categories %}
+<div class="row">
+  <div class="col">
+      <h3>{{ category.name }}</h3>
+      <p>{{ category.description }}</p>
+      <div class="card-deck">
+          {% for door in category.door_list %}
+            <div class="card">
+            <img src="{{ door.img_src }}" class="card-img-top" alt="{{ door.name }}">
+            <div class="card-body">
+              <h5 class="card-title"><strong>{{ door.name }}</strong></h5>
+              <p class="card-text">{{ door.description }}</p>
+              <a href="{{ url_for('doors.single_doors_table', doors_table_id=door.id) }}" class="btn btn-primary">Перейти на страницу</a>
+            </div>
+          </div>
+          {% endfor %}
+      </div>
   </div>
-    <div class="row">
-        <div class="col-8">
-            <h2>Большой ассортимент</h2>
-            {% for category in categories %}
-              <h3>{{ category.name }}</h3>
-              <p>{{ category.description }}</p>
-              {% for door in category.door_list %}
-              <strong>{{ door.name }}</strong>
-              <div class="card" style="width: 25rem;">
-                <img class="card-img-top" src="{{ door.img_src }}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">{{ door.description }}</p>
-                  <a href="{{ url_for('doors.single_doors_table', doors_table_id=door.id) }}" class="btn btn-primary">Перейти на страницу</a>
-                </div>
-              </div>
-              {% endfor %}
-              <hr /> 
-            {% endfor %}
-        </div>
-        <div class="-4">
-            <h2>Продажа,установка.</h2>
-            <h3>Выезд замерщика.</h3>
-        </div>
-    </div>
-    {% endblock %}
+</div>
+{% endfor %}
+{% endblock %}
