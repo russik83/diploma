@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for septum in septums %}
+<body>
+    <table width="100%" cellspacing="0" cellpadding="5">
+        <tr>
+            <td width="600" valign="top"><img src="{{ septum.img_src }}" class="card-img-top" alt="{{ septums.name }}"></td>
+            <h5 class="card-title"><strong>{{ septum.name }}</strong></h5>
+            <td valign="top">{{ septum.description }}</td>
+        </tr>
+    </table>
+    <table style="height: 50px;">
+        <tbody>
+          <tr>
+            <td class="align-middle"></td>
+            <a href="{{ url_for('septums.single_septums_table', septums_table_id=septum.id) }}" class="btn btn-primary">Перейти на страницу</a>
+          </tr>
+        </tbody>
+      </table>
+</body>
+{% endfor %}
+{% endblock %}

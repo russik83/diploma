@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <strong><a class="nav-link" href="/">Главная страница</a></strong>
+    <strong><em><a class="nav-link" href="/">ГЛАВНАЯ СТРАНИЦА</a></em></strong>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="navbar-brand" href="/">Стеклянные конструксии</a>
+                <a class="navbar-brand" href="{{ url_for('showers.index') }}"><em>Душевые ограждения</em></a>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="#">Зеркала</a>
+            <a class="navbar-brand" href="{{ url_for('mirrors.index') }}"><em>Зеркала</em></a>
         </ul>
         <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="#">Душевые ограждения</a>
+            <a class="navbar-brand" href="{{ url_for('septums.index') }}"><em>Стеклянные конструкции</em></a>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Искать</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
         </form>
         <ul class="navbar-nav">
             {% if current_user.is_authenticated %}
@@ -38,7 +38,7 @@
                     <a class="nav-link" href="{{ url_for('user.login') }}">Войти</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('user.login') }}">Регистрация</a>
+                    <a class="nav-link" href="{{ url_for('user.register') }}">Регистрация</a>
                 </li>
             {% endif %}
         </ul>

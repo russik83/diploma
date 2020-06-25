@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{ mirror.name }}</h3>
+<div class="row">
+    <div class="col-8">
+        <div class="card" style="width: 50%;">
+            <img class="card-img-top" src="{{ mirror.img_src }}" alt="Card image cap" style="width: 100%; height: auto;">
+            {{ mirror.text }}
+            <h6>Зеркало: {{ mirror.mirror }}</h6>
+            <h6>Размеры: {{ mirror.size }}</h6>
+            <h6>Крепеж: {{ mirror.fasteners }}</h6>
+            <h6> {{ mirror.hardware }}</h6>
+            <br><em><div class="alert alert-success">Цена: {{ mirror.price }} руб.</em>
+        </div>
+    </div>
+</div>
+{% endblock %}

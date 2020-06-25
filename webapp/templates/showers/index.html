@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for shower in showers %}
+<body>
+    <table width="100%" cellspacing="0" cellpadding="5">
+        <tr>
+            <td width="600" valign="top"><img src="{{ shower.img_src }}" class="card-img-top" alt="{{ showers.name }}"></td>
+            <h5 class="card-title"><strong>{{ shower.name }}</strong></h5>
+            <td valign="top">{{ shower.description }}</td>
+        </tr>
+    </table>
+    <table style="height: 50px;">
+        <tbody>
+          <tr>
+            <td class="align-middle"></td>
+            <a href="{{ url_for('showers.single_showers_table', showers_table_id=shower.id) }}" class="btn btn-primary">Перейти на страницу</a>
+          </tr>
+        </tbody>
+      </table>
+</body>
+{% endfor %}
+{% endblock %}

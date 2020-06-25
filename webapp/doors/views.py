@@ -1,6 +1,6 @@
 from flask import abort, Blueprint, render_template
 
-
+from webapp.db import db
 from webapp.doors.models import Category, Door
 
 blueprint = Blueprint('doors', __name__)
@@ -9,7 +9,7 @@ blueprint = Blueprint('doors', __name__)
 @blueprint.route("/")
 def index():
     title = "Мир дверей"
-    heading = "Межкомнатные двери"
+    heading = "Межкомнатные стеклянные двери"
     categories = Category.query.order_by(Category.name.asc())
     print(Category, Door)
     return render_template('doors/index.html', page_title=title, heading=heading, categories=categories)

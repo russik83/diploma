@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{ septum.name }}</h3>
+<div class="row">
+    <div class="col-8">
+        <div class="card" style="width: 50%;">
+            <img class="card-img-top" src="{{ septum.img_src }}" alt="Card image cap" style="width: 100%; height: auto;">
+            {{ septum.text }}
+            <h6>Цвет: {{ septum.colour }}</h6>
+            <h6>Материал: {{ septum.material }}</h6>
+            <h6>Размеры: {{ septum.dimensions }}</h6>
+            <h6>Наличие: {{ septum.thickness }}</h6>
+            <h6>Срок изготовления: {{ septum.hardware }}</h6>
+            <br><em><div class="alert alert-success">Цена: {{ septum.price }} руб.</em>
+        </div>
+    </div>
+</div>
+{% endblock %}
