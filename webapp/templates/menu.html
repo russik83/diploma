@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="navbar-brand" href="{{ url_for('showers.index') }}"><em>Душевые ограждения</em></a>
+                <a class="navbar-brand" href="{{ url_for('showers.index') }}"><button type="button" class="btn btn-outline-primary"><em>Душевые ограждения</em></button></a>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="{{ url_for('mirrors.index') }}"><em>Зеркала</em></a>
+            <a class="navbar-brand" href="{{ url_for('mirrors.index') }}"><button type="button" class="btn btn-outline-primary"><em>Зеркала</em></button></a>
         </ul>
         <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="{{ url_for('septums.index') }}"><em>Стеклянные конструкции</em></a>
+            <a class="navbar-brand" href="{{ url_for('septums.index') }}"><button type="button" class="btn btn-outline-primary"><em>Стеклянные конструкции</em></button></a>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+            <button class="btn btn-outline-primary" type="submit">Поиск</button>
         </form>
         <ul class="navbar-nav">
             {% if current_user.is_authenticated %}

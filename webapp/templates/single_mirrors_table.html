@@ -3,10 +3,11 @@
 {% block content %}
 <h3>{{ mirror.name }}</h3>
 <div class="row">
-    <div class="col-8">
-        <div class="card" style="width: 50%;">
+    <div class="col">
+        <div class="card" style="width: 90%;">
             <img class="card-img-top" src="{{ mirror.img_src }}" alt="Card image cap" style="width: 100%; height: auto;">
             {{ mirror.text }}
+            <br>
             <h6>Зеркало: {{ mirror.mirror }}</h6>
             <h6>Размеры: {{ mirror.size }}</h6>
             <h6>Крепеж: {{ mirror.fasteners }}</h6>
@@ -14,5 +15,8 @@
             <br><em><div class="alert alert-success">Цена: {{ mirror.price }} руб.</em>
         </div>
     </div>
+</div>
+<div class="col">
+    <img src="http://zavod-akma.ru/assets/images/dostavka1.jpg" width="700" height="300">
 </div>
 {% endblock %}

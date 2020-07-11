@@ -10,6 +10,7 @@ from webapp.mirrors.views import blueprint as mirrors_blueprint
 from webapp.septums.views import blueprint as septums_blueprint
 from webapp.user.models import User
 from webapp.user.views import blueprint as user_blueprint
+from webapp.errors import blueprint as errors_blueprint
 
 
 def create_app():
@@ -22,6 +23,7 @@ def create_app():
     login_manager.init_app(app)
     login_manager.login_view = 'user.login'
 
+    app.register_blueprint(errors_blueprint)
     app.register_blueprint(admin_blueprint)
     app.register_blueprint(doors_blueprint)
     app.register_blueprint(showers_blueprint)
